@@ -1,0 +1,50 @@
+///*
+ //* To change this license header, choose License Headers in Project Properties.
+ //* To change this template file, choose Tools | Templates
+ //* and open the template in the editor.
+ //*/
+package wsibd;
+
+/**
+ *
+ * @author SOYYA
+ */
+import java.util.Scanner;
+public class StrukBelanja {
+   public static void main(String[] args) {
+        // Header
+        System.out.println("-----------------------------------------------------------------------");
+        System.out.println("                       Kharisma Agung Plaza (KAP)");
+        System.out.println("                        Promo Belanja Berhadiah");
+        System.out.println("                    Khusus Pembelian 5 Barang Pertama");
+        System.out.println("                    Dengan harga minimum Rp 10000,00");
+        System.out.println("-----------------------------------------------------------------------");
+
+        // Input nama pembeli
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukkan nama pembeli : " );
+        String namaPembeli = scanner.nextLine();
+
+        // Input harga barang
+        int totalHarga = 0;
+        for (int i = 1; i <= 5; i++) {
+            System.out.print("Masukkan harga barang ke-" + i + "       : ");
+            int hargaBarang = scanner.nextInt();
+            totalHarga += hargaBarang;
+        }
+
+        // Output total harga
+        System.out.println("Total harga pembelian atas nama " + namaPembeli + " dalam Rp " + totalHarga);
+
+        // Pemberian hadiah
+        if (totalHarga >= 100000) {
+            System.out.println("\nSelamat...................");
+            System.out.println("Anda telah mendapat hadiah 1 buah mug cantik");
+        }
+
+        // Footer
+        System.out.println("\n-----------------------------------------------------------------------");
+        System.out.println("                                Terima Kasih");
+        System.out.println("                  Anda sudah belanja di Kharisma Agung Plaza");
+    }
+}
